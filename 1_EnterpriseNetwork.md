@@ -1,7 +1,7 @@
 # Huawei-Based Enterprise Network Design and Implementation / Huawei құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
 
 ### Network Topology
-![Topology Enterprise Network Design](images/Topology_EnterpriseNetworkDesign_Huawei_v1.png)  
+![Topology Enterprise Network Design](images/Topology_EnterpriseNetworkDesign_PhysicalDevice_Huawei_v1.png)  
 
 | Device         | Role                                   |
 | ---------------| ---------------------------------------|
