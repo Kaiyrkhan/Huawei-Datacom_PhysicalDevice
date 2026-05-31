@@ -59,6 +59,8 @@ Monitoring Systems (LibreNMS, Icinga, Zabbix)
 Centralized Logging System (syslog-ng/rsyslog + Graylog)  
 Router/Switch (Log) → syslog-ng (жинау) → Graylog+MongoDB (талдау) → OpenSearch 2.15.x (сақтау)  
 
+Centralized Authentication and Authorization (LDAP)  
+
 ## Reference Links
 
 1) [Huawei Documentation](https://support.huawei.com/enterprise/en/doc/index.html)
