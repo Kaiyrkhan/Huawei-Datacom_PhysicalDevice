@@ -1,7 +1,7 @@
 # Huawei-Based Enterprise Network Design and Implementation / Huawei құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
 
 ### Network Topology
-![Topology Enterprise Network Design](images/Topology_EnterpriseNetworkDesign_PhysicalDevice_Huawei_v1.png)  
+![Topology Enterprise Network Design](./images/Topology_EnterpriseNetworkDesign_PhysicalDevice_Huawei_v1.png)  
 
 | Device         | Role                                   |
 | ---------------| ---------------------------------------|
@@ -23,3 +23,58 @@
 5) NAT (Easy IP)
 6) Remote Access (SSH, Telnet)
 
+## Step 1 – Configure Device Hostname
+
+<details>
+  <summary>Access Layer Switches (A1, A2)</summary>
+<pre><code>
+system-view
+sysname A1
+commit
+</code></pre>
+</details>
+
+```shell
+# Access Layer Switches (A1, A2)
+
+system-view
+sysname A1
+
+commit
+```
+
+```shell
+# Aggregation Layer Switches (D1, D2, D3)
+
+system-view
+sysname D1
+
+commit
+```
+
+```shell
+# Core Layer Switches (C1, C2)
+
+system-view
+sysname C1
+
+commit
+```
+
+```shell
+# Edge Router (EdgeR1)
+
+Username: super
+Password: super
+Warning: The password is already expired.
+The password needs to be changed. Change now? [Y/N]: Y
+Please enter old password: super
+Please enter new password: Huawei@123
+Please confirm new password: Huawei@123
+The password has been changed successfully.
+<Huawei>
+
+<Huawei> system-view
+[Huawei] sysname EdgeR1
+[EdgeR1]
+```
