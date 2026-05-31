@@ -25,15 +25,6 @@
 
 ## Step 1 – Configure Device Hostname
 
-<details>
-  <summary>Access Layer Switches (A1, A2)</summary>
-<pre><code>
-system-view
-sysname A1
-commit
-</code></pre>
-</details>
-
 ```shell
 # Access Layer Switches (A1, A2)
 
