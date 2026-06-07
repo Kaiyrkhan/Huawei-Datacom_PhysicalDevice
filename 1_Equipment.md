@@ -2,7 +2,7 @@
 
 Table - Network Equipment
 | Device Type       | Model             | Vendor | Operating System |
-| ------------------| ------------------|--------| -----------------|
+|-------------------|-------------------|--------|------------------|
 | L2 Switch         | S3710-H24P4S-A    | Huawei | VRP              |
 | L3 Switch         | S5731-H24T4XC     | Huawei | VRP              |
 | Router            | AR6140E-9G-2AC    | Huawei | VRP              |
@@ -12,10 +12,10 @@ Table - Network Equipment
 
 
 Table - Login authentication
-| interface / port  | Username | Password       |
-| ------------------| ---------|----------------|
-| Console Port      | admin    | P@s$w0rd_&1234 |
-| VTY (SSH, Telnet) | student  | P@s$w0rd_&1234 |
+| interface / port  | Username | Password (1)   | Password (2)   |
+|-------------------|----------|----------------|----------------|
+| Console Port      | admin    | P@s$w0rd_&1234 | Huaei@123      |
+| VTY (SSH, Telnet) | student  | P@s$w0rd_&1234 | Huaei@123      |
 
 
 ## Access Layer Switch: Huawei S3710-H24P4S-A
