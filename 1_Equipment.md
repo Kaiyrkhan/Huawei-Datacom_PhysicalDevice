@@ -1,4 +1,4 @@
-# Lab Equipment Overview / Желілік құрал-жабдықтарға шолу
+# Network Equipment Overview / Желілік құрал-жабдықтарға шолу
 
 **Access Layer Switch (A1, A2): Huawei S3710-H24P4S-A**  
 
