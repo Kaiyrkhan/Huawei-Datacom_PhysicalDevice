@@ -21,8 +21,9 @@
 
 ![images](images/S3710-H24P4S-A_Switch.png)
 
-Login authentication
 ```shell
+Login authentication
+
 Password: P@s$w0rd_&1234
 Confirm password: P@s$w0rd_&1234
 ```
@@ -36,6 +37,12 @@ display version
 display interface brief
 ```
 ![images](images/S3710-H24P4S-A_display_int_brief.png)
+
+**Core Layer (C1) and Aggregation Layer Switch (D1, D2, D3): Huawei S5731-H24T4XC**
+
+
+**Edge Router (EdgeR1): AR6140E-9G-2AC**
+
 
 ## Scenario
 1) Configure VLAN (Create VLANs and Access/Trunk Ports)  
