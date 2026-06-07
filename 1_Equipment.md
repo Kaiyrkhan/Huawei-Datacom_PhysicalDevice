@@ -20,7 +20,7 @@ Table - Login Authentication
 
 ## Access Layer Switch: Huawei S3710-H24P4S-A
 
-![images](images/S3710-H24P4S-A_Switch.png)
+![images](./images/S3710-H24P4S-A_Switch.png)
 
 **Login authentication (Console Port)**
 ```shell
@@ -31,16 +31,16 @@ Confirm password: P@s$w0rd_&1234
 ```shell
 display version
 ```
-![images](images/S3710-H24P4S-A_display_version.png)
+![images](./images/S3710-H24P4S-A_display_version.png)
 
 ```shell
 display interface brief
 ```
-![images](images/S3710-H24P4S-A_display_int_brief.png)
+![images](./images/S3710-H24P4S-A_display_int_brief.png)
 
 ##  Core/Aggregation Layer Switch: Huawei S5731-H24T4XC
 
-![images](images/S5731-H24T4XC_Switch.png)
+![images](./images/S5731-H24T4XC_Switch.png)
 
 **Login authentication (Console Port)**
 ```shell
@@ -51,16 +51,16 @@ Confirm password: P@s$w0rd_&1234
 ```shell
 display version
 ```
-![images](images/S5731-H24T4XC_display_version.png)
+![images](./images/S5731-H24T4XC_display_version.png)
 
 ```shell
 display interface brief
 ```
-![images](images/S5731-H24T4XC_display_int_brief.png)
+![images](./images/S5731-H24T4XC_display_int_brief.png)
 
 ## Edge Router: AR6140E-9G-2AC
 
-![images](images/AR6140E-9G-2AC_Router.png)
+![images](./images/AR6140E-9G-2AC_Router.png)
 > Yellow - Layer 3 Routed Port  
 > Blue - Layer 2 Switch Port  
 > Red - Management (MGMT) Port  
@@ -82,14 +82,14 @@ display interface brief
 ```shell
 display version
 ```
-![images](images/AR6140E-9G-2AC_display_version.png)
+![images](./images/AR6140E-9G-2AC_display_version.png)
 
 ```shell
 display interface brief
 ```
-![images](images/AR6140E-9G-2AC_display_int_brief.png)
+![images](./images/AR6140E-9G-2AC_display_int_brief.png)
 
 ```shell
 display ip interface brief
 ```
-![images](images/AR6140E-9G-2AC_display_ip_int_brief.png)
+![images](./images/AR6140E-9G-2AC_display_ip_int_brief.png)
