@@ -32,8 +32,12 @@ display interface brief
 ```
 ![images](images/S3710-H24P4S-A_display_int_brief.png)
 
-**Core Layer (C1) and Aggregation Layer Switch (D1, D2, D3): Huawei S5731-H24T4XC**
+##  Aggregation Layer (D1, D2, D3) and Core Layer Switch (C1): Huawei S5731-H24T4XC
 
+```shell
+```
 
-**Edge Router (EdgeR1): AR6140E-9G-2AC**
+## Edge Router (EdgeR1): AR6140E-9G-2AC
 
+```shell
+```
