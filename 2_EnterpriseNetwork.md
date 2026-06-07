@@ -15,7 +15,7 @@
 | H1, H2, H3, H4 | End Device                             |
 
 
-## System Overview
+## Lab Equipment Overview
 
 **Access Layer Switch (A1, A2): Huawei S3710-H24P4S-A**  
 
