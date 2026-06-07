@@ -47,7 +47,7 @@ display interface brief
 
 ![images](images/AR6140E-9G-2AC_Router.png)
 > Yellow - Layer 3 Routed Port  
-> Blue - Layer 2 SwitchPort  
+> Blue - Layer 2 Switch Port  
 > Red - Management (MGMT) Port  
 
 **Login authentication (Console Port)**  
