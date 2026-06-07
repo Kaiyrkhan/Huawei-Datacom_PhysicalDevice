@@ -16,7 +16,7 @@ Table - Network Equipment
 ![images](images/S3710-H24P4S-A_Switch.png)
 
 ```shell
-Login authentication
+Login authentication (Console Port)
 
 Password: P@s$w0rd_&1234
 Confirm password: P@s$w0rd_&1234
