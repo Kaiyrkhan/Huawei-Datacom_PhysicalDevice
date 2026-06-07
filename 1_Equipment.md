@@ -11,7 +11,7 @@ Table - Network Equipment
 | Access Point      | AirEngine 6761-21 | Huawei | VRP              |
 
 
-Table - Login authentication
+Table - Login Authentication
 | interface/port    | Username | Password (1)   | Password (2)   |
 |-------------------|----------|----------------|----------------|
 | Console Port      | admin    | P@s$w0rd_&1234 | Huawei@123     |
