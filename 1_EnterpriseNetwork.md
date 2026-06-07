@@ -14,20 +14,7 @@
 | A1, A2         | Access Layer Switch                    |
 | H1, H2, H3, H4 | End Device                             |
 
-
-## Scenario
-1) Configure VLAN (Create VLANs and Access/Trunk Ports)  
-   Link Aggregation. Eth-Trunk  
-   MSTP (Multiple Spanning Tree Protocol)  
-2) VRRP (Virtual Router Redundancy Protocol)
-3) Single-Area OSPF
-4) DHCP
-5) NAT (Easy IP)
-6) Remote Access (SSH, Telnet)
-
-## Step 1 – Configure Device Hostname
-
-### Access Layer Switches (A1, A2) - About the System
+## About the System
 
 > Құрылғының моделі: Huawei S3710-H24P4S-A Switch  
 
@@ -49,8 +36,21 @@ display interface brief
 ```
 ![images](images/S3710-H24P4S-A_display_int_brief.png)
 
+## Scenario
+1) Configure VLAN (Create VLANs and Access/Trunk Ports)  
+   Link Aggregation. Eth-Trunk  
+   MSTP (Multiple Spanning Tree Protocol)  
+2) VRRP (Virtual Router Redundancy Protocol)
+3) Single-Area OSPF
+4) DHCP
+5) NAT (Easy IP)
+6) Remote Access (SSH, Telnet)
+
+## Step 1 – Configure Device Hostname
 
 ```shell
+# Access Layer Switches (A1, A2)
+
 system-view
 sysname A1
 
