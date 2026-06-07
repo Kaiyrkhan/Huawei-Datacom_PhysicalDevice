@@ -29,7 +29,7 @@
 
 ### Access Layer Switches (A1, A2) - About the System
 
-> **Құрылғының моделі:** Huawei S3710-H24P4S-A Switch  
+> Құрылғының моделі: Huawei S3710-H24P4S-A Switch  
 
 ![images](images/Huawei_S3710-H24P4S-A_Switch.png)
 
