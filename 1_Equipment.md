@@ -44,14 +44,14 @@ display interface brief
 > Blue - Layer 2 SwitchPort  
 > Red - Management (MGMT) Port  
 
-**Login authentication**  
+**Login authentication (Console Port)**  
 **Warning:** *An initial username and password are required for the first login via the console. Set a username and password and keep them safe. Otherwise you will not be able to login via the console.*  
 **New Username:** admin  
 **Password:** P@s$w0rd_&1234  
 **Confirm password:** P@s$w0rd_&1234  
 **Info:** *Configuration console exit, please retry to log on*  
 
-**Login authentication**  
+**Login authentication (Console Port)**  
 **Username:** admin  
 **Password:** P@s$w0rd_&1234  
 
