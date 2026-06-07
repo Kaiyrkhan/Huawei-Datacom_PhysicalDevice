@@ -29,42 +29,29 @@
 ```shell
 # Access Layer Switch (A1, A2)
 
-system-view
-sysname A1
-
-commit
+<Huawei> system-view
+[Huawei] sysname A1
+[A1]
 ```
 
 ```shell
 # Aggregation Layer Switch (D1, D2, D3)
 
-system-view
-sysname D1
-
-commit
+<Huawei> system-view
+[Huawei] sysname D1
+[D1]
 ```
 
 ```shell
 # Core Layer Switch (C1, C2)
 
-system-view
-sysname C1
-
-commit
+<Huawei> system-view
+[Huawei] sysname C1
+[C1]
 ```
 
 ```shell
 # Edge Router (EdgeR1)
-
-Username: super
-Password: super
-Warning: The password is already expired.
-The password needs to be changed. Change now? [Y/N]: Y
-Please enter old password: super
-Please enter new password: Huawei@123
-Please confirm new password: Huawei@123
-The password has been changed successfully.
-<Huawei>
 
 <Huawei> system-view
 [Huawei] sysname EdgeR1
