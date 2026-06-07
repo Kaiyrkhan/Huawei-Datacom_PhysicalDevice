@@ -11,13 +11,19 @@ Table - Network Equipment
 | Access Point      | AirEngine 6761-21 | Huawei | VRP              |
 
 
+Table - Login authentication
+| interface / port  | Username | Password       |
+| ------------------| ---------|----------------|
+| Console Port      | admin    | P@s$w0rd_&1234 |
+| VTY (SSH, Telnet) | student  | P@s$w0rd_&1234 |
+
+
 ## Access Layer Switch (A1, A2): Huawei S3710-H24P4S-A
 
 ![images](images/S3710-H24P4S-A_Switch.png)
 
+**Login authentication (Console Port)**
 ```shell
-Login authentication (Console Port)
-
 Password: P@s$w0rd_&1234
 Confirm password: P@s$w0rd_&1234
 ```
