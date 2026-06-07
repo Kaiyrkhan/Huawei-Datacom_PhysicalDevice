@@ -27,7 +27,7 @@
 ## Step 1 – Configure Device Hostname
 
 ```shell
-# Access Layer Switches (A1, A2)
+# Access Layer Switch (A1, A2)
 
 system-view
 sysname A1
@@ -36,7 +36,7 @@ commit
 ```
 
 ```shell
-# Aggregation Layer Switches (D1, D2, D3)
+# Aggregation Layer Switch (D1, D2, D3)
 
 system-view
 sysname D1
@@ -45,7 +45,7 @@ commit
 ```
 
 ```shell
-# Core Layer Switches (C1, C2)
+# Core Layer Switch (C1, C2)
 
 system-view
 sysname C1
