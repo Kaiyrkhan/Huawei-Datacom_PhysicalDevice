@@ -1,5 +1,6 @@
 # Network Equipment Overview / Желілік құрал-жабдықтарға шолу
 
+Table - Network Equipment
 | Device Type       | Model             | Vendor | Operating System |
 | ------------------| ------------------|--------| -----------------|
 | L2 Switch         | S3710-H24P4S-A    | Huawei | VRP              |
