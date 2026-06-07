@@ -12,7 +12,7 @@ Table - Network Equipment
 
 
 Table - Login authentication
-| interface / port  | Username | Password (1)   | Password (2)   |
+| interface/port    | Username | Password (1)   | Password (2)   |
 |-------------------|----------|----------------|----------------|
 | Console Port      | admin    | P@s$w0rd_&1234 | Huawei@123     |
 | VTY (SSH, Telnet) | student  | P@s$w0rd_&1234 | Huawei@123     |
