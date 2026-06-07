@@ -1,5 +1,7 @@
 # Huawei-Based Enterprise Network Design and Implementation / Huawei құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
 
+> **ЕСКЕРТУ!** Бұл зертханалық жұмыс нақты физикалық құрылғыны (Physical Device) қолданып жасалған!  
+
 ### Network Topology
 ![Topology Enterprise Network Design](./images/Topology_EnterpriseNetworkDesign_PhysicalDevice_Huawei_v1.png)  
 
@@ -25,9 +27,30 @@
 
 ## Step 1 – Configure Device Hostname
 
-```shell
-# Access Layer Switches (A1, A2)
+### Access Layer Switches (A1, A2) - About the System
 
+> **Құрылғының моделі:** Huawei S3710-H24P4S-A Switch  
+
+![images](images/Huawei_S3710-H24P4S-A_Switch.png)
+
+Login authentication
+```shell
+Password: P@s$w0rd_&1234
+Confirm password: P@s$w0rd_&1234
+```
+
+```shell
+display version
+```
+![images](images/S3710-H24P4S-A_display_version.png)
+
+```shell
+display interface brief
+```
+![images](images/S3710-H24P4S-A_display_int_brief.png)
+
+
+```shell
 system-view
 sysname A1
 
