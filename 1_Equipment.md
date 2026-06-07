@@ -40,8 +40,23 @@ display interface brief
 
 ##  Core/Aggregation Layer Switch: Huawei S5731-H24T4XC
 
+![images](images/S5731-H24T4XC_Switch.png)
+
+**Login authentication (Console Port)**
 ```shell
+Password: P@s$w0rd_&1234
+Confirm password: P@s$w0rd_&1234
 ```
+
+```shell
+display version
+```
+![images](images/S5731-H24T4XC_display_version.png)
+
+```shell
+display interface brief
+```
+![images](images/S5731-H24T4XC_display_int_brief.png)
 
 ## Edge Router: AR6140E-9G-2AC
 
