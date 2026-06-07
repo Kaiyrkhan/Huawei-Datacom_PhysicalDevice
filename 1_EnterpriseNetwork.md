@@ -18,7 +18,7 @@
 
 **Access Layer Switch (A1, A2): Huawei S3710-H24P4S-A**  
 
-![images](images/Huawei_S3710-H24P4S-A_Switch.png)
+![images](images/S3710-H24P4S-A_Switch.png)
 
 Login authentication
 ```shell
