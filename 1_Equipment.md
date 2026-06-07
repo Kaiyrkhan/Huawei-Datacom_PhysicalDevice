@@ -18,7 +18,7 @@ Table - Login authentication
 | VTY (SSH, Telnet) | student  | P@s$w0rd_&1234 |
 
 
-## Access Layer Switch (A1, A2): Huawei S3710-H24P4S-A
+## Access Layer Switch: Huawei S3710-H24P4S-A
 
 ![images](images/S3710-H24P4S-A_Switch.png)
 
@@ -38,12 +38,12 @@ display interface brief
 ```
 ![images](images/S3710-H24P4S-A_display_int_brief.png)
 
-##  Aggregation Layer (D1, D2, D3) and Core Layer Switch (C1): Huawei S5731-H24T4XC
+##  Core/Aggregation Layer Switch: Huawei S5731-H24T4XC
 
 ```shell
 ```
 
-## Edge Router (EdgeR1): AR6140E-9G-2AC
+## Edge Router: AR6140E-9G-2AC
 
 ![images](images/AR6140E-9G-2AC_Router.png)
 > Yellow - Layer 3 Routed Port  
