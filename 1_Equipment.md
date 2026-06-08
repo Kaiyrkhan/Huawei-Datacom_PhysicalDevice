@@ -43,10 +43,22 @@ display interface brief
 ![images](./images/S5731-H24T4XC_Switch.png)
 
 **Login authentication (Console Port)**
-```shell
-Password: P@s$w0rd_&1234
-Confirm password: P@s$w0rd_&1234
-```
+
+User interface con0 is available  
+
+Please Press ENTER  
+
+An initial password is required for the first login via the console.  
+Set a password and keep it safe. Otherwise you will not be able to login via the console.  
+
+Please configure the login password (8-16)  
+**Enter Password:** P@s$w0rd_&1234  
+**Confirm Password:** P@s$w0rd_&1234  
+
+**Warning:** The authentication mode was changed to password authentication and the user level was changed to 15 on con0 at the first user login.  
+**Warning:** There is a risk on the user-interface which you login through. Please change the configuration of the user-interface as soon as possible.  
+
+**Info:** Smart-upgrade is currently disabled. Enable Smart-upgrade to get recommended version information.  
 
 ```shell
 display version
