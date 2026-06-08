@@ -100,7 +100,7 @@ The account create success.
 
 **Info:** *Configuration console exit, please retry to log on*  
 
-Login authentication
+Login authentication  
 **Username:** admin  
 **Password:** P@s$w0rd_&1234  
 
