@@ -24,6 +24,8 @@ Table - Login Authentication
 
 **Login Authentication (Console Port)**
 ```shell
+Login authentication
+
 Password: P@s$w0rd_&1234
 Confirm password: P@s$w0rd_&1234
 ```
@@ -42,7 +44,7 @@ display interface brief
 
 ![images](./images/S5731-H24T4XC_Switch.png)
 
-**Login authentication (Console Port)**
+**Login Authentication (Console Port)**
 
 User interface con0 is available  
 
@@ -69,6 +71,11 @@ display version
 display interface brief
 ```
 ![images](./images/S5731-H24T4XC_display_int_brief.png)
+
+```shell
+display ip interface brief
+```
+![images](./images/S5731-H24T4XC_display_ip_int_brief.png)
 
 ## Edge Router: AR6140E-9G-2AC
 
