@@ -18,7 +18,7 @@ Table - Login Authentication
 | VTY (SSH, Telnet) | student  | P@s$w0rd_&1234 | Huawei@123     |
 
 
-## Access Layer Switch: Huawei S3710-H24P4S-A
+## Access Layer Switch: Huawei CloudEngine S3710-H24P4S-A
 
 ![images](./images/S3710-H24P4S-A_Switch.png)
 
@@ -46,7 +46,7 @@ display interface brief
 ```
 ![images](./images/S3710-H24P4S-A_display_int_brief.png)
 
-##  Core/Aggregation Layer Switch: Huawei S5731-H24T4XC
+##  Core/Aggregation Layer Switch: Huawei CloudEngine S5731-H24T4XC
 
 ![images](./images/S5731-H24T4XC_Switch.png)
 
@@ -83,7 +83,7 @@ display ip interface brief
 ```
 ![images](./images/S5731-H24T4XC_display_ip_int_brief.png)
 
-## Edge Router: AR6140E-9G-2AC
+## Edge Router: Huawei NetEngine AR6140E-9G-2AC
 
 ![images](./images/AR6140E-9G-2AC_Router.png)
 > Yellow - Layer 3 Routed Port  
@@ -124,7 +124,13 @@ display ip interface brief
 ![images](./images/AR6140E-9G-2AC_display_ip_int_brief.png)
 
 ## Wireless Access Controller: Huawei AC6508
-> Access Point: AirEngine 6761-21  
+> Wireless LAN Access Point: AirEngine 6761-21  
+
+```shell
+display version
+```
+
+## Wireless Access Controller: Huawei HiSecEngine USG6000E
 
 ```shell
 display version
