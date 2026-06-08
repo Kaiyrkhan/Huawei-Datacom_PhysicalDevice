@@ -152,7 +152,17 @@ display version
 ```
 ![images](./images/AC6508_display_version.png)
 
-## Wireless Access Controller: Huawei HiSecEngine USG6000E
+```shell
+display interface brief
+```
+![images](./images/AC6508_display_int_brief.png)
+
+```shell
+display ip interface brief
+```
+![images](./images/AC6508_display_ip_int_brief.png)
+
+## Firewall: Huawei HiSecEngine USG6000E
 
 ```shell
 display version
