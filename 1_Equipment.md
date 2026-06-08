@@ -124,7 +124,8 @@ display ip interface brief
 ![images](./images/AR6140E-9G-2AC_display_ip_int_brief.png)
 
 ## Wireless Access Controller: Huawei AC6508
-> Wireless LAN Access Point: AirEngine 6761-21  
+
+![images](./images/AC6508.png)
 
 Please configure the **Console** login password:  
 **Info:** A plain text password is a string of 8 to 128 case-sensitive characters and must be a combination of at least two of the following: uppercase letters A to Z, lowercase letters a to z, digits, and special characters. A cipher text password contains 56 characters.  
@@ -161,6 +162,8 @@ display interface brief
 display ip interface brief
 ```
 ![images](./images/AC6508_display_ip_int_brief.png)
+
+> Wireless LAN Access Point: AirEngine 6761-21  
 
 ## Firewall: Huawei HiSecEngine USG6000E
 
