@@ -123,7 +123,7 @@ display ip interface brief
 ```
 ![images](./images/AR6140E-9G-2AC_display_ip_int_brief.png)
 
-## Access Controller: Huawei AC6508
+## Wireless Access Controller: Huawei AC6508
 > Access Point: AirEngine 6761-21  
 
 ```shell
