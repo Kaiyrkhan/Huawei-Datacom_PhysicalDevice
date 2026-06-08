@@ -22,7 +22,7 @@ Table - Login Authentication
 
 ![images](./images/S3710-H24P4S-A_Switch.png)
 
-**Login Authentication (Console Port)**
+**Login authentication**
 
 User interface con0 is available  
 
@@ -50,7 +50,7 @@ display interface brief
 
 ![images](./images/S5731-H24T4XC_Switch.png)
 
-**Login Authentication (Console Port)**
+**Login authentication**
 
 User interface con0 is available  
 
@@ -90,9 +90,7 @@ display ip interface brief
 > Blue - Layer 2 Switch Port  
 > Red - Management (MGMT) Port  
 
-**Login Authentication (Console Port)**  
-
-Login authentication  
+**Login authentication**  
 
 **Warning:** *An initial username and password are required for the first login via the console. Set a username and password and keep them safe. Otherwise you will not be able to login via the console.*  
 **New Username:** admin  
