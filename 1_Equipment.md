@@ -126,6 +126,27 @@ display ip interface brief
 ## Wireless Access Controller: Huawei AC6508
 > Wireless LAN Access Point: AirEngine 6761-21  
 
+Please configure the Console login password:  
+**Info:** A plain text password is a string of 8 to 128 case-sensitive characters and must be a combination of at least two of the following: uppercase letters A to Z, lowercase letters a to z, digits, and special characters. A cipher text password contains 56 characters.  
+**Enter password:** P@s$w0rd_&1234  
+**Confirm password:** P@s$w0rd_&1234  
+
+Please configure the user name and password for logging in through the **Web system and STelnet**:  
+Enter the username(contains 1-64 characters, which cannot contain the following characters: * ? "): **student**  
+Please configure the login password:  
+**Info:** A plain text password is a string of 8 to 128 case-sensitive characters and must be a combination of at least two of the following: uppercase letters A to Z, lowercase letters a to z, digits, and special characters.  
+**Enter password:** P@s$w0rd_&1234  
+**Confirm password:** P@s$w0rd_&1234  
+
+Info: Configuration succeeded. Log in again.  
+
+Login authentication  
+
+Password: P@s$w0rd_&1234  
+Info: Current mode: Monitor (automatically making switching decisions).  
+Warning: The intelligent upgrade function is disabled. Log in to the web platform and enable this function.  
+<AC6508>
+
 ```shell
 display version
 ```
