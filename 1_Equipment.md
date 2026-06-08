@@ -22,7 +22,7 @@ Table - Login Authentication
 
 ![images](./images/S3710-H24P4S-A_Switch.png)
 
-**Login authentication (Console Port)**
+**Login Authentication (Console Port)**
 ```shell
 Password: P@s$w0rd_&1234
 Confirm password: P@s$w0rd_&1234
