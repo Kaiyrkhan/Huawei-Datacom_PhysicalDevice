@@ -23,12 +23,18 @@ Table - Login Authentication
 ![images](./images/S3710-H24P4S-A_Switch.png)
 
 **Login Authentication (Console Port)**
-```shell
-Login authentication
 
-Password: P@s$w0rd_&1234
-Confirm password: P@s$w0rd_&1234
-```
+User interface con0 is available  
+
+Please Press ENTER  
+
+Please configure the login password (8-16)  
+**Password:** P@s$w0rd_&1234  
+**Confirm password:** P@s$w0rd_&1234  
+
+**Info:** Save the password now. Please wait for a moment.  
+**Info:** The max number of VTY users is 5, the number of current VTY users online is 0, and total number of terminal users online is 1.  
+          The current login time is 2023-09-08 18:15:47.  
 
 ```shell
 display version
