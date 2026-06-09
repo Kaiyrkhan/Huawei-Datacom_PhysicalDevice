@@ -215,3 +215,66 @@ display cu | include ssh
 display interface brief
 ```
 ![images](./images/S3710-H24P4S-A_display_int_brief.png)
+
+**Create VLAN**
+```shell
+vlan 50
+ name MGMT
+
+display vlan brief
+```
+
+**Create VLANIF interface**
+```shell
+interface Vlanif 50
+ description MGMT
+ ip address 10.1.50.101 255.255.255.0
+
+display ip interface brief
+```
+
+**SSH server Permit interface**
+```shell
+ssh server-source -i Vlanif50
+```
+
+**Enable SSH**
+```shell
+stelnet server enable
+display ssh server status
+```
+
+**Generate RSA Key**
+```shell
+rsa local-key-pair create
+ Warning: Confirm to replace them! Continue? [Y/N] Y
+ Input the bits in the modulus[default = 2048]: 2048
+
+display rsa local-key-pair public
+```
+
+**Configure Local User Authentication and Authorization**
+```shell
+aaa
+ local-user student password irreversible-cipher P@s$w0rd_&1234
+ local-user student privilege level 3
+ local-user student service-type terminal ssh
+```
+
+**Configure SSH User Settings**
+```shell
+ssh user student
+ssh user student authentication-type password
+ssh user student service-type stelnet
+```
+
+**Configure VTY Lines**
+```shell
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+```
+
+```shell
+display cu | include ssh
+```
