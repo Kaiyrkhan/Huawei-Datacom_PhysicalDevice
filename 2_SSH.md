@@ -2,24 +2,7 @@
 
 > **ЕСКЕРТУ!** Бұл зертханалық жұмыс нақты физикалық құрылғыны (Physical Device) қолданып жасалған!  
 
-### Step 1 – Access Layer Switch (A1, A2)
-
-![images](./images/S3710-H24P4S-A_Switch.png)
-
-> Huawei CloudEngine S3710-H24P4S-A  
-
-```shell
-display interface brief
-```
-![images](./images/S3710-H24P4S-A_display_int_brief.png)
-
-### Step 2 – Core/Aggregation Layer Switch (C1, D1, D2, D3) 
-
-![images](./images/S5731-H24T4XC_Switch.png)
-
-> Huawei CloudEngine S5731-H24T4XC  
-
-### Step 3 – Edge Router (EdgeR1)
+### Step 1 – Edge Router (EdgeR1)
 
 ![images](./images/AR6140E-9G-2AC_Router.png)
 > Huawei NetEngine AR6140E-9G-2AC  
@@ -27,7 +10,6 @@ display interface brief
 > Yellow - Layer 3 Routed Port  
 > Blue - Layer 2 Switch Port  
 > Red - Management (MGMT) Port  
-
 
 *Төмендегі топологияда көрсетілгендей, A1 Switch (g1/0/17) пен EdgeR1 Router-ды (g0/0/8) Copper кабелмен байланыстырып қосамыз!*
 ![images](images/AR6140E-9G-2AC_topology.png)
@@ -123,3 +105,20 @@ display ssh server status
 display cu | include ssh
 ```
 ![images](images/AR6140E-9G-2AC_display_ssh_server_status.png)
+
+### Step 2 – Core/Aggregation Layer Switch (C1, D1, D2, D3) 
+
+![images](./images/S5731-H24T4XC_Switch.png)
+
+> Huawei CloudEngine S5731-H24T4XC  
+
+### Step 3 – Access Layer Switch (A1, A2)
+
+![images](./images/S3710-H24P4S-A_Switch.png)
+
+> Huawei CloudEngine S3710-H24P4S-A  
+
+```shell
+display interface brief
+```
+![images](./images/S3710-H24P4S-A_display_int_brief.png)
