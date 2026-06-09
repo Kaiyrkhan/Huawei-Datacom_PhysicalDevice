@@ -33,6 +33,8 @@ display vlan brief
 interface Vlanif50
  description MGMT
  ip address 10.1.50.1 255.255.255.0
+
+display ip interface brief
 ```
 
 **Access Port**
@@ -41,6 +43,9 @@ interface GigabitEthernet0/0/8
  description MGMT
  port link-type access
  port default vlan 50
+
+display port vlan
+display interface brief
 ```
 
 **Configure Local User Authentication and Authorization**
