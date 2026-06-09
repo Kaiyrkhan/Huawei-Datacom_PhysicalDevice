@@ -122,7 +122,7 @@ display vlan
 display port vlan
 ```
 
-## Step 3 – Configure Link Aggregation. Eth-Trunk
+## Step 2 – Configure Link Aggregation. Eth-Trunk
 
 **D1 and D2 Switch**
 
