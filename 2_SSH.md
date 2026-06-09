@@ -20,6 +20,29 @@ display ip interface brief
 ```
 ![images](images/AR6140E-9G-2AC_display_ip_int_brief.png)
 
+**Create VLAN**
+```shell
+vlan 50
+ name MGMT
+
+display vlan brief
+```
+
+**Create VLANIF interface**
+```shell
+interface Vlanif50
+ description MGMT
+ ip address 10.1.50.1 255.255.255.0
+```
+
+**Access Port**
+```shell
+interface GigabitEthernet0/0/8
+ description MGMT
+ port link-type access
+ port default vlan 50
+```
+
 **Configure Local User Authentication and Authorization**
 ```shell
 aaa
