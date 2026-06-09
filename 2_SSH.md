@@ -8,6 +8,11 @@
 
 > Huawei CloudEngine S3710-H24P4S-A  
 
+```shell
+display interface brief
+```
+![images](./images/S3710-H24P4S-A_display_int_brief.png)
+
 ### Step 2 – Core/Aggregation Layer Switch (C1, D1, D2, D3) 
 
 ![images](./images/S5731-H24T4XC_Switch.png)
