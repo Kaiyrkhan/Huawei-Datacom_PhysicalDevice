@@ -127,6 +127,23 @@ display cu | include ssh
 Төмендегі топологияда көрсетілгендей, **A1 Switch** пен **C1, D1, D2 Switch-терді** Copper кабелмен байланыстырып қосамыз!
 ![images](./images/S5731-H24T4XC_C1D1D2-A1-PC.png)
 
+**Configure Device Hostname**
+```shell
+<Huawei> system-view
+[Huawei] sysname EdgeR1
+[EdgeR1]
+```
+
+```shell
+display interface brief
+```
+![images](./images/S5731-H24T4XC_display_int_brief.png)
+
+```shell
+display ip interface brief
+```
+![images](./images/S5731-H24T4XC_display_ip_int_brief.png)
+
 ### Step 3 – Access Layer Switch (A1, A2)
 
 ![images](./images/S3710-H24P4S-A_Switch.png)
