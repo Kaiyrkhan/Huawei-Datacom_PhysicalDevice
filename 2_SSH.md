@@ -23,10 +23,18 @@ display ip interface brief
 **Configure Local User Authentication and Authorization**
 ```shell
 aaa
- local-user student password irreversible-cipher Huawei@123
- local-user student service-type terminal ssh
+ local-user student password irreversible-cipher P@s$w0rd_&1234
  local-user student privilege level 15
+ local-user student service-type terminal ssh
 ```
+
+> *жеке (individual) құқық (privilege) - student қолданушыға ғана тиесілі*  
+> aaa  
+> local-user student privilege level 15  
+
+> жалпы (Global) құқық (privilege) - барлық қолданушыға қатысты  
+> user-interface vty 0 4  
+> user privilege level 15  
 
 **Configure VTY Lines**
 ```shell
