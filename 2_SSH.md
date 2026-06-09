@@ -92,19 +92,24 @@ user-interface vty 0 4
 rsa local-key-pair create
  Warning: Confirm to replace them! Continue? [Y/N] Y
  Input the bits in the modulus[default = 2048]: 2048
+
+display rsa local-key-pair public
 ```
 
 **Enable SSH**
 ```shell
-stelnet server enable
+[EdgeR1] stelnet server enable
+Info: Succeeded in starting the STELNET server
 ```
-*Info: Succeeded in starting the STELNET server.*
 
 ```shell
 display ssh server status
-display cu | include ssh
 ```
 ![images](./images/AR6140E-9G-2AC_display_ssh_server_status.png)
+
+```shell
+display cu | include ssh
+```
 
 ### Step 2 – Core/Aggregation Layer Switch (C1, D1, D2, D3) 
 
