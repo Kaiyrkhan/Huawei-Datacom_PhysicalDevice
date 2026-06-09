@@ -41,7 +41,7 @@ interface Vlanif50
 display ip interface brief
 ```
 
-**Access Port**
+**Configure Access Port**
 ```shell
 interface GigabitEthernet0/0/8
  description MGMT
