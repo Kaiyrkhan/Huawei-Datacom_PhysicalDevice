@@ -130,7 +130,7 @@ display cu | include ssh
 **Configure Device Hostname**
 ```shell
 <Huawei> system-view
-[Huawei] sysname C1
+[Huawei] sysname C1 | D1 | D2
 [EdgeR1]
 ```
 
