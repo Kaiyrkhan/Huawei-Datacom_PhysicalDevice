@@ -38,12 +38,12 @@ display vlan
 ```shell
 # Configure Access Port
 
-interface g1/0/3
+interface g1/0/5
  port link-type access
  port default vlan 111
  quit
 
-interface g1/0/4
+interface g1/0/9
  port link-type access
  port default vlan 112
  quit
@@ -81,12 +81,12 @@ display vlan
 ```shell
 # Configure Trunk Port and Allowed VLANs
 
-interface g1/0/2
+interface g0/0/2
  port link-type trunk
  port trunk allow-pass vlan 111 112
  quit
 
-interface g1/0/3
+interface g0/0/3
  port link-type trunk
  port trunk allow-pass vlan 111 112
  quit
@@ -108,17 +108,12 @@ display vlan
 ```shell
 # Configure Access Port
 
-interface g1/0/2
+interface g0/0/1
  port link-type access
- port default vlan 10
+ port default vlan 30
  quit
 
-interface g1/0/3
- port link-type access
- port default vlan 10
- quit
-
-interface g1/0/4
+interface g0/0/2
  port link-type access
  port default vlan 10
  quit
@@ -142,10 +137,10 @@ interface Eth-Trunk 1                                          // Create Eth-Tru
 ```shell
 # Add a Port to the Eth-Trunk
 
-interface g1/0/23
+interface g0/0/23
  eth-trunk 1
  quit
-interface g1/0/24
+interface g0/0/24
  eth-trunk 1
  quit
 
