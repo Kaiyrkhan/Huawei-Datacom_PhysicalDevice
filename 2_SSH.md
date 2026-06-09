@@ -87,6 +87,8 @@ ssh server permit interface Vlanif50
 ```shell
 ssh user student authentication-type password
 ```
+> Global Settings  
+> ssh user default-authentication-type password  
 
 **Enable SSH**
 ```shell
