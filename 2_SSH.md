@@ -2,6 +2,9 @@
 
 > **ЕСКЕРТУ!** Бұл зертханалық жұмыс нақты физикалық құрылғыны (Physical Device) қолданып жасалған!  
 
+### Network Topology
+![Topology Enterprise Network Design](./images/Topology_EnterpriseNetworkDesign_PhysicalDevice_Huawei_v1.png)
+
 Table - MGMT IP Addresses
 | Device | IP Address      |
 | -------| ----------------|
