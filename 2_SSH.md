@@ -20,6 +20,7 @@
 > Yellow - Layer 3 Routed Port  
 > Blue - Layer 2 Switch Port  
 > Red - Management (MGMT) Port  
+> Huawei NetEngine AR6140E-9G-2AC  
 
 *Төмендегі топологияда көрсетілгендей, A1 Switch (g1/0/17) пен EdgeR1 Router-ды (g0/0/8) Copper кабелмен байланыстырып қосамыз!*
 ![images](images/AR6140E-9G-2AC_topology.png)
