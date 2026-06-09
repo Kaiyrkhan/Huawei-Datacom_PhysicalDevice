@@ -67,11 +67,11 @@ aaa
 
 > *жеке құқық (individual privilege) - student қолданушыға ғана тиесілі*  
 > aaa  
-> local-user student privilege level 15  
+>  **local-user student privilege level 15**  
 
 > жалпы құқық (Global privilege) - барлық қолданушыға қатысты  
 > user-interface vty 0 4  
-> user privilege level 15  
+>  **user privilege level 15**  
 
 **Configure SSH User Settings**
 ```shell
