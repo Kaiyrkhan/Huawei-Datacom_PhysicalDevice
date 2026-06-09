@@ -57,6 +57,26 @@ display interface brief
 ssh server permit interface Vlanif 50
 ```
 
+**Enable SSH**
+```shell
+[EdgeR1] stelnet server enable
+Info: Succeeded in starting the STELNET server
+```
+
+```shell
+display ssh server status
+```
+![images](./images/AR6140E-9G-2AC_display_ssh_server_status.png)
+
+**Generate RSA Key**
+```shell
+rsa local-key-pair create
+ Warning: Confirm to replace them! Continue? [Y/N] Y
+ Input the bits in the modulus[default = 2048]: 2048
+
+display rsa local-key-pair public
+```
+
 **Configure Local User Authentication and Authorization**
 ```shell
 aaa
@@ -86,26 +106,6 @@ user-interface vty 0 4
  authentication-mode aaa
  protocol inbound ssh
 ```
-
-**Generate RSA Key**
-```shell
-rsa local-key-pair create
- Warning: Confirm to replace them! Continue? [Y/N] Y
- Input the bits in the modulus[default = 2048]: 2048
-
-display rsa local-key-pair public
-```
-
-**Enable SSH**
-```shell
-[EdgeR1] stelnet server enable
-Info: Succeeded in starting the STELNET server
-```
-
-```shell
-display ssh server status
-```
-![images](./images/AR6140E-9G-2AC_display_ssh_server_status.png)
 
 ```shell
 display cu | include ssh
