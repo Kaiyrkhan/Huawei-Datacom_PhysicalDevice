@@ -130,8 +130,8 @@ display cu | include ssh
 **Configure Device Hostname**
 ```shell
 <Huawei> system-view
-[Huawei] sysname C1 | D1 | D2
-[EdgeR1]
+[Huawei] sysname C1
+[C1]
 ```
 
 ```shell
@@ -203,6 +203,13 @@ display cu | include ssh
 ![images](./images/S3710-H24P4S-A_Switch.png)
 
 > Huawei CloudEngine S3710-H24P4S-A  
+
+**Configure Device Hostname**
+```shell
+<Huawei> system-view
+[Huawei] sysname A1
+[A1]
+```
 
 ```shell
 display interface brief
