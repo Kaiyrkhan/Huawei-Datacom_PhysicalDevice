@@ -11,7 +11,7 @@
 > Blue - Layer 2 Switch Port  
 > Red - Management (MGMT) Port  
 
-*Төмендегі топологияда көрсетілгендей, A1 Switch (g1/0/17) пен EdgeR1 Router-ды (g0/0/8) Copper кабелмен байланыстырып қосамыз!*
+*Төмендегі топологияда көрсетілгендей, **A1 Switch (g1/0/17)** пен **EdgeR1 Router-ды (g0/0/8)** Copper кабелмен байланыстырып қосамыз!*
 ![images](./images/AR6140E-9G-2AC_G8-G17.png)
 
 ```shell
@@ -85,13 +85,13 @@ aaa
  local-user student service-type terminal ssh
 ```
 
-> *жеке құқық (individual privilege) - student қолданушыға ғана тиесілі*  
+> ***жеке құқық (individual privilege) - student қолданушыға ғана тиесілі***  
 > aaa  
->  **local-user student privilege level 15**  
+>  local-user student privilege level 15  
 
-> жалпы құқық (Global privilege) - барлық қолданушыға қатысты  
+> ***жалпы құқық (Global privilege) - барлық қолданушыға қатысты***  
 > user-interface vty 0 4  
->  **user privilege level 15**  
+>  user privilege level 15  
 
 **Configure SSH User Settings**
 ```shell
