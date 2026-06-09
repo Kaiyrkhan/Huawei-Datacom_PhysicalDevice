@@ -83,7 +83,7 @@ rsa local-key-pair create
 ssh server permit interface Vlanif50
 ```
 
-**SSH User Authentication Type**
+**Configure SSH User Settings**
 ```shell
 ssh user student authentication-type password
 ```
