@@ -12,17 +12,17 @@
 > Red - Management (MGMT) Port  
 
 *Төмендегі топологияда көрсетілгендей, A1 Switch (g1/0/17) пен EdgeR1 Router-ды (g0/0/8) Copper кабелмен байланыстырып қосамыз!*
-![images](images/AR6140E-9G-2AC_topology.png)
+![images](./images/AR6140E-9G-2AC_G8_G17.png)
 
 ```shell
 display interface brief
 ```
-![images](images/AR6140E-9G-2AC_display_int_brief.png)
+![images](./images/AR6140E-9G-2AC_display_int_brief.png)
 
 ```shell
 display ip interface brief
 ```
-![images](images/AR6140E-9G-2AC_display_ip_int_brief.png)
+![images](./images/AR6140E-9G-2AC_display_ip_int_brief.png)
 
 **Create VLAN**
 ```shell
@@ -104,7 +104,7 @@ stelnet server enable
 display ssh server status
 display cu | include ssh
 ```
-![images](images/AR6140E-9G-2AC_display_ssh_server_status.png)
+![images](./images/AR6140E-9G-2AC_display_ssh_server_status.png)
 
 ### Step 2 – Core/Aggregation Layer Switch (C1, D1, D2, D3) 
 
