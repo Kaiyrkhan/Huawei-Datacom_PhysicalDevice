@@ -198,7 +198,7 @@ user-interface vty 0 4
 display cu | include ssh
 ```
 
-### Step 3 – Access Layer Switch (A1, A2)
+### Step 3 – Access Layer Switch (A1)
 
 ![images](./images/S3710-H24P4S-A_Switch.png)
 
