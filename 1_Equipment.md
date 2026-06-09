@@ -3,7 +3,7 @@
 Table - Network Equipment
 | Device Type       | Model                     | Vendor | Operating System |
 |-------------------|---------------------------|--------|------------------|
-| L2 Switch         | CloudEngineS3710-H24P4S-A | Huawei | VRP              |
+| L2 Switch         | CloudEngine S3710-H24P4S-A | Huawei | VRP              |
 | L3 Switch         | CloudEngine S5731-H24T4XC | Huawei | VRP              |
 | Router            | NetEngine AR6140E-9G-2AC  | Huawei | VRP              |
 | Firewall          | HiSecEngine USG6610E      | Huawei | VRP              |
