@@ -2,7 +2,7 @@
 
 > **ЕСКЕРТУ!** Бұл зертханалық жұмыс нақты физикалық құрылғыны (Physical Device) қолданып жасалған!  
 
-IPv4 Addressing Table
+Table - MGMT IP Addresses
 | Device | IP Address      |
 | -------| ----------------|
 | EdgeR1 | 10.1.50.1 /24   |
