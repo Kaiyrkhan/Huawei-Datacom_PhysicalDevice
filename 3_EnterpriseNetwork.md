@@ -24,36 +24,136 @@
 5) NAT (Easy IP)
 6) Remote Access (SSH, Telnet)
 
-## Step 1 – Configure Device Hostname
+## Step 1 – Configure VLAN (Create VLANs and Access/Trunk Ports)
+
+**A1 and A2 Switch**
 
 ```shell
-# Access Layer Switch (A1, A2)
+# Create VLANs
+vlan batch 111 112
 
-<Huawei> system-view
-[Huawei] sysname A1
-[A1]
+display vlan
 ```
 
 ```shell
-# Aggregation Layer Switch (D1, D2, D3)
+# Configure Access Port
 
-<Huawei> system-view
-[Huawei] sysname D1
-[D1]
+interface g1/0/3
+ port link-type access
+ port default vlan 111
+ quit
+
+interface g1/0/4
+ port link-type access
+ port default vlan 112
+ quit
+
+display vlan
+display port vlan
 ```
 
 ```shell
-# Core Layer Switch (C1, C2)
+# Configure Trunk Port and Allowed VLANs
 
-<Huawei> system-view
-[Huawei] sysname C1
-[C1]
+interface g1/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 111 112
+ quit
+
+interface g1/0/2
+ port link-type trunk
+ port trunk allow-pass vlan 111 112
+ quit
+
+display vlan
+display port vlan
+```
+
+**D1 and D2 Switch**
+
+```shell
+# Create VLANs
+vlan batch 111 112
+
+display vlan
 ```
 
 ```shell
-# Edge Router (EdgeR1)
+# Configure Trunk Port and Allowed VLANs
 
-<Huawei> system-view
-[Huawei] sysname EdgeR1
-[EdgeR1]
+interface g1/0/2
+ port link-type trunk
+ port trunk allow-pass vlan 111 112
+ quit
+
+interface g1/0/3
+ port link-type trunk
+ port trunk allow-pass vlan 111 112
+ quit
+
+display vlan
+display port vlan
+```
+
+**D3 Switch**
+
+```shell
+# Create VLANs
+vlan 10
+ quit
+
+display vlan
+```
+
+```shell
+# Configure Access Port
+
+interface g1/0/2
+ port link-type access
+ port default vlan 10
+ quit
+
+interface g1/0/3
+ port link-type access
+ port default vlan 10
+ quit
+
+interface g1/0/4
+ port link-type access
+ port default vlan 10
+ quit
+
+display vlan
+display port vlan
+```
+
+## Step 3 – Configure Link Aggregation. Eth-Trunk
+
+**D1 and D2 Switch**
+
+```shell
+interface Eth-Trunk 1                                          // Create Eth-Trunk interface
+ port link-type trunk                                          // Trunk Port
+ port trunk allow-pass vlan 111 112                            // Allowed VLANs         
+ mode lacp-static                                              // Link Aggregation Mode
+ quit
+```
+
+```shell
+# Add a Port to the Eth-Trunk
+
+interface g1/0/11
+ eth-trunk 1
+ quit
+interface g1/0/12
+ eth-trunk 1
+ quit
+
+display int brief
+```
+
+```shell
+# Verify Configuration
+
+display eth-trunk 1
 ```
