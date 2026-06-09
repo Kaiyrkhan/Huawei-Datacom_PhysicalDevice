@@ -124,7 +124,7 @@ display cu | include ssh
 
 > Huawei CloudEngine S5731-H24T4XC  
 
-Төмендегі топологияда көрсетілгендей, **A1 Switch** пен **Core/Aggregation Layer Switch-терді** Copper кабелмен байланыстырып қосамыз!
+Төмендегі топологияда көрсетілгендей, **A1 Switch** пен **C1, D1, D2 Switch-терді** Copper кабелмен байланыстырып қосамыз!
 ![images](./images/S5731-H24T4XC_C1D1D2-A1-PC.png)
 
 ### Step 3 – Access Layer Switch (A1, A2)
