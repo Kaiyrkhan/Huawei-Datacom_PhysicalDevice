@@ -28,11 +28,11 @@ aaa
  local-user student service-type terminal ssh
 ```
 
-> *жеке (individual) құқық (privilege) - student қолданушыға ғана тиесілі*  
+> *жеке құқық (individual privilege) - student қолданушыға ғана тиесілі*  
 > aaa  
 > local-user student privilege level 15  
 
-> жалпы (Global) құқық (privilege) - барлық қолданушыға қатысты  
+> жалпы құқық (Global privilege) - барлық қолданушыға қатысты  
 > user-interface vty 0 4  
 > user privilege level 15  
 
@@ -42,3 +42,33 @@ user-interface vty 0 4
  authentication-mode aaa
  protocol inbound ssh
 ```
+
+**Generate RSA Key**
+```shell
+rsa local-key-pair create
+ Warning: Confirm to replace them! Continue? [Y/N] Y
+ Input the bits in the modulus[default = 2048]: 2048
+```
+
+**SSH server Permit interface**
+```shell
+ssh server permit interface Vlanif50
+```
+
+**SSH User Authentication Type**
+```shell
+ssh user student authentication-type password
+```
+
+**Enable SSH**
+```shell
+stelnet server enable
+```
+*Info: Succeeded in starting the STELNET server.*
+
+```shell
+display ssh server status
+display current-configuration | include ssh
+display current-configuration | include stelnet
+```
+
