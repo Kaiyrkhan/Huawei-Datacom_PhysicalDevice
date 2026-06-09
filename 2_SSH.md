@@ -71,4 +71,4 @@ display ssh server status
 display current-configuration | include ssh
 display current-configuration | include stelnet
 ```
-
+![images](images/AR6140E-9G-2AC_display_ssh_server_status.png)
