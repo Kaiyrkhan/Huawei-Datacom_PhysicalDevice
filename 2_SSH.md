@@ -4,7 +4,11 @@
 
 ### Step 1 – Access Layer Switch: Huawei CloudEngine S3710-H24P4S-A
 
+![images](./images/S3710-H24P4S-A_Switch.png)
+
 ### Step 2 – Core/Aggregation Layer Switch: Huawei CloudEngine S5731-H24T4XC
+
+![images](./images/S5731-H24T4XC_Switch.png)
 
 ### Step 3 – Edge Router: Huawei NetEngine AR6140E-9G-2AC
 
