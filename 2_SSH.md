@@ -15,6 +15,12 @@
 ![images](./images/AR6140E-9G-2AC_G8-G17.png)
 
 ```shell
+<Huawei> system-view
+[Huawei] sysname EdgeR1
+[EdgeR1]
+```
+
+```shell
 display interface brief
 ```
 ![images](./images/AR6140E-9G-2AC_display_int_brief.png)
