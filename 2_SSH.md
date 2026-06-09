@@ -20,3 +20,17 @@ display ip interface brief
 ```
 ![images](images/AR6140E-9G-2AC_display_ip_int_brief.png)
 
+**Configure Local User Authentication and Authorization**
+```shell
+aaa
+ local-user student password irreversible-cipher Huawei@123
+ local-user student service-type terminal ssh
+ local-user student privilege level 15
+```
+
+**Configure VTY Lines**
+```shell
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+```
