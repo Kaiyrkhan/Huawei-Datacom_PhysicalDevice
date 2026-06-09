@@ -12,7 +12,7 @@
 > Red - Management (MGMT) Port  
 
 Төмендегі топологияда көрсетілгендей, **A1 Switch (g1/0/17)** пен **EdgeR1 Router-ды (g0/0/8)** Copper кабелмен байланыстырып қосамыз!
-![images](./images/AR6140E-9G-2AC_G8-G17.png)
+![images](./images/AR6140E-9G-2AC_R1-A1-PC.png)
 
 **Configure Device Hostname**
 ```shell
