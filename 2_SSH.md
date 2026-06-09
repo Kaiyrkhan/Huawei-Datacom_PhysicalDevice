@@ -34,7 +34,7 @@ display vlan brief
 
 **Create VLANIF interface**
 ```shell
-interface Vlanif50
+interface Vlanif 50
  description MGMT
  ip address 10.1.50.1 255.255.255.0
 
@@ -50,6 +50,11 @@ interface GigabitEthernet0/0/8
 
 display port vlan
 display interface brief
+```
+
+**SSH server Permit interface**
+```shell
+ssh server permit interface Vlanif 50
 ```
 
 **Configure Local User Authentication and Authorization**
@@ -68,6 +73,13 @@ aaa
 > user-interface vty 0 4  
 > user privilege level 15  
 
+**Configure SSH User Settings**
+```shell
+ssh user student authentication-type password
+```
+> Global Settings  
+> ssh user default-authentication-type password  
+
 **Configure VTY Lines**
 ```shell
 user-interface vty 0 4
@@ -81,18 +93,6 @@ rsa local-key-pair create
  Warning: Confirm to replace them! Continue? [Y/N] Y
  Input the bits in the modulus[default = 2048]: 2048
 ```
-
-**SSH server Permit interface**
-```shell
-ssh server permit interface Vlanif50
-```
-
-**Configure SSH User Settings**
-```shell
-ssh user student authentication-type password
-```
-> Global Settings  
-> ssh user default-authentication-type password  
 
 **Enable SSH**
 ```shell
