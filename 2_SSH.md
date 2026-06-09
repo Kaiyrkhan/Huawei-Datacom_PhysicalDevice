@@ -238,6 +238,34 @@ display ip interface brief
 ssh server-source -i Vlanif50
 ```
 
+**Configure Access Port**
+```shell
+interface GE1/0/17
+ description MGMT
+ port link-type access
+ port default vlan 50
+
+interface GE1/0/18
+ description MGMT
+ port link-type access
+ port default vlan 50
+
+interface GE1/0/19
+ description MGMT
+ port link-type access
+ port default vlan 50
+
+interface GE1/0/20
+ description MGMT
+ port link-type access
+ port default vlan 50
+
+interface GE1/0/24
+ description MGMT
+ port link-type access
+ port default vlan 50
+```
+
 **Enable SSH**
 ```shell
 stelnet server enable
