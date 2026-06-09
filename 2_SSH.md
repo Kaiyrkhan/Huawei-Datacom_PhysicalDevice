@@ -7,7 +7,7 @@
 > Blue - Layer 2 Switch Port  
 > Red - Management (MGMT) Port  
 
-*Төмендегі топологияда көрсетілгендей, A1 Switch пен EdgeR1-ді Copper кабелмен байланыстырып қосамыз!*
+*Төмендегі топологияда көрсетілгендей, A1 Switch пен EdgeR1 Router-ды Copper кабелмен байланыстырып қосамыз!*
 ![images](images/AR6140E-9G-2AC_topology.png)
 
 ```shell
