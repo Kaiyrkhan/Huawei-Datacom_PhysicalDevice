@@ -130,7 +130,7 @@ display cu | include ssh
 **Configure Device Hostname**
 ```shell
 <Huawei> system-view
-[Huawei] sysname EdgeR1
+[Huawei] sysname C1
 [EdgeR1]
 ```
 
@@ -143,6 +143,60 @@ display interface brief
 display ip interface brief
 ```
 ![images](./images/S5731-H24T4XC_display_ip_int_brief.png)
+
+```shell
+interface MEth0/0/1
+ ip address 10.1.50.11 255.255.255.0
+
+display ip interface brief
+```
+
+**SSH server Permit interface**
+```shell
+ssh server-source -i MEth0/0/1
+```
+
+**Enable SSH**
+```shell
+stelnet server enable
+display ssh server status
+```
+
+**Generate RSA Key**
+```shell
+rsa local-key-pair create
+ Warning: Confirm to replace them! Continue? [Y/N] Y
+ Input the bits in the modulus[default = 2048]: 2048
+
+display rsa local-key-pair public
+```
+
+**Configure Local User Authentication and Authorization**
+```shell
+aaa
+ local-user student password irreversible-cipher P@s$w0rd_&1234
+ local-user student privilege level 15
+ local-user student service-type terminal ssh
+```
+
+**Configure SSH User Settings**
+```shell
+ssh user student
+ssh user student authentication-type password
+ssh user student service-type stelnet
+```
+> ssh client first-time enable  
+
+**Configure VTY Lines**
+```shell
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+```
+
+```shell
+display cu | include ssh
+```
 
 ### Step 3 – Access Layer Switch (A1, A2)
 
