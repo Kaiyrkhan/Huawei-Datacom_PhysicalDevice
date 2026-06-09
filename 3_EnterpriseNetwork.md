@@ -142,10 +142,10 @@ interface Eth-Trunk 1                                          // Create Eth-Tru
 ```shell
 # Add a Port to the Eth-Trunk
 
-interface g1/0/11
+interface g1/0/23
  eth-trunk 1
  quit
-interface g1/0/12
+interface g1/0/24
  eth-trunk 1
  quit
 
