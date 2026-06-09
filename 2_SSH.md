@@ -1,6 +1,12 @@
 # Remote Access Configuration using SSH
 
-### Edge Router: Huawei NetEngine AR6140E-9G-2AC
+> **ЕСКЕРТУ!** Бұл зертханалық жұмыс нақты физикалық құрылғыны (Physical Device) қолданып жасалған!  
+
+### Step 1 – Access Layer Switch: Huawei CloudEngine S3710-H24P4S-A
+
+### Step 2 – Core/Aggregation Layer Switch: Huawei CloudEngine S5731-H24T4XC
+
+### Step 3 – Edge Router: Huawei NetEngine AR6140E-9G-2AC
 
 ![images](./images/AR6140E-9G-2AC_Router.png)
 > Yellow - Layer 3 Routed Port  
