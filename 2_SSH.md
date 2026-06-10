@@ -258,27 +258,27 @@ ssh server-source -i Vlanif50
 **Configure Access Port**
 ```shell
 interface GE1/0/17
- description "Connected to EdgeR1 G0/0/8"
+ description "Uplink to EdgeR1 GE0/0/8"
  port link-type access
  port default vlan 50
 
 interface GE1/0/18
- description "Connected to С1 MEth0/0/1"
+ description "Uplink to С1 MEth0/0/1"
  port link-type access
  port default vlan 50
 
 interface GE1/0/19
- description "Connected to D1 MEth0/0/1"
+ description "Uplink to D1 MEth0/0/1"
  port link-type access
  port default vlan 50
 
 interface GE1/0/20
- description "Connected to D2 MEth0/0/1"
+ description "Uplink to D2 MEth0/0/1"
  port link-type access
  port default vlan 50
 
 interface GE1/0/24
- description "Connected to Laptop"
+ description "Connected to MGMT Laptop"
  port link-type access
  port default vlan 50
 ```
