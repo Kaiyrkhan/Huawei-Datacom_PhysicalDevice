@@ -15,6 +15,7 @@
 | H1, H2, H3, H4 | End Device                             |
 
 ## Scenario
+
 1) Configure VLAN (Create VLANs and Access/Trunk Ports)  
    Link Aggregation. Eth-Trunk  
    MSTP (Multiple Spanning Tree Protocol)  
