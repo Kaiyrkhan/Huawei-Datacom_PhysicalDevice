@@ -30,7 +30,13 @@
 
 ```shell
 # Create VLANs
-vlan batch 111 112
+vlan batch 50 111 112
+
+vlan 50
+ name MGMT
+
+interface Vlanif50
+ ip address 10.1.50.101 255.255.255.0
 
 display vlan
 ```
@@ -69,23 +75,56 @@ display vlan
 display port vlan
 ```
 
+```shell
+stp region-configuration
+ region-name HQ
+ revision-level 1
+ instance 1 vlan 111
+ instance 2 vlan 112
+```
+
 **D1 and D2 Switch**
 
 ```shell
 # Create VLANs
 vlan batch 111 112
 
+interface Vlanif111
+ ip address 172.16.111.1 255.255.255.0
+ vrrp vrid 1 virtual-ip 172.16.111.254
+ vrrp vrid 1 priority 110
+ dhcp select relay
+ dhcp relay server-ip 10.10.10.67
+
+interface Vlanif112
+ ip address 172.16.112.1 255.255.255.0
+ vrrp vrid 2 virtual-ip 172.16.112.254
+ dhcp select relay
+ dhcp relay server-ip 10.10.10.67
+
 display vlan
+```
+
+```shell
+(D1) 
+interface MEth0/0/1
+ ip address 10.1.50.21 255.255.255.0
+
+(D2)
+interface MEth0/0/1
+ ip address 10.1.50.22 255.255.255.0
 ```
 
 ```shell
 # Configure Trunk Port and Allowed VLANs
 
+(D1)
 interface g0/0/2
  port link-type trunk
  port trunk allow-pass vlan 111 112
  quit
 
+(D2)
 interface g0/0/3
  port link-type trunk
  port trunk allow-pass vlan 111 112
@@ -95,6 +134,15 @@ display vlan
 display port vlan
 ```
 
+```shell
+stp region-configuration
+ region-name HQ
+ revision-level 1
+ instance 1 vlan 111
+ instance 2 vlan 112
+ active region-configuration
+```
+
 **D3 Switch**
 
 ```shell
@@ -102,24 +150,34 @@ display port vlan
 vlan 10
  quit
 
-display vlan
+vlan 20
+ quit
+
+interface Vlan10
+ ip address 10.10.10.1 255.255.255.0
+
+interface Vlan20
+ ip address 172.20.20.1 255.255.255.0
+
+show vlan
 ```
 
 ```shell
-# Configure Access Port
+# Configure Trunk Port
 
-interface g0/0/1
- port link-type access
- port default vlan 30
- quit
+interface GigabitEthernet0/2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,20
+ switchport mode trunk
 
-interface g0/0/2
- port link-type access
- port default vlan 10
- quit
+show vlan
+show port vlan
+```
 
-display vlan
-display port vlan
+```shell
+interface GigabitEthernet0/1
+ no switchport
+ ip address 10.1.1.114 255.255.255.252
 ```
 
 ## Step 2 – Configure Link Aggregation. Eth-Trunk
@@ -151,4 +209,28 @@ display int brief
 # Verify Configuration
 
 display eth-trunk 1
+```
+**C1 Switch**
+
+```shell
+interface MEth0/0/1
+ ip address 10.1.50.11 255.255.255.0
+```
+
+**EdgeR1 Router**
+
+```shell
+vlan 50
+ name MGMT
+
+interface Vlanif50
+ ip address 10.1.50.1 255.255.255.0
+```
+
+```shell
+# Configure Access Port
+
+interface GigabitEthernet0/0/8
+ port link-type access
+ port default vlan 50
 ```
