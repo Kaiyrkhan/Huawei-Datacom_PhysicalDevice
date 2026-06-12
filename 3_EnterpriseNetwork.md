@@ -122,7 +122,6 @@ display port vlan
 # Create VLANs
 
 vlan batch 10 20
- quit
 
 vlan 10
  name VMs
@@ -134,16 +133,16 @@ vlan 20
 display vlan
 ```
 
-
-
-**EdgeR1 Router**
-
 ```shell
-# Configure Access Port
+# Configure Trunk Port and Allowed VLANs
 
-interface GigabitEthernet0/0/8
- port link-type access
- port default vlan 50
+interface g0/0/11
+ port link-type trunk
+ port trunk allow-pass vlan 10 20
+ quit
+
+display vlan
+display port vlan
 ```
 
 ## Step 2 – Configure Link Aggregation. Eth-Trunk
