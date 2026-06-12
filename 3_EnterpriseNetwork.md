@@ -116,7 +116,7 @@ display vlan
 display port vlan
 ```
 
-**D3 Switch - Huawei VRP**
+**D3 Switch (Huawei VRP)**
 
 ```shell
 # Create VLANs
@@ -178,8 +178,11 @@ display eth-trunk 1
 
 ## Step 3 – Configure MSTP (Multiple Spanning Tree Protocol)
 
+**D1 and D2 Switch**
+
 ```shell
 display stp
+ Protocol Status: Disabled
 
 stp enable
  Warning: The global STP state will be changed. Continue? [Y/N]: Y
@@ -216,6 +219,44 @@ stp instance 2 root secondary
 
 stp instance 1 root secondary
 stp instance 2 root primary
+```
+
+**A1 and A2 Switch**
+
+```shell
+display stp
+ Protocol Status: Disabled
+
+stp enable
+ Warning: The global STP state will be changed. Continue? [Y/N]: Y
+
+stp mode mstp
+
+display stp
+```
+
+```shell
+stp region-configuration
+ region-name HQ
+ revision-level 1
+ instance 1 vlan 111
+ instance 2 vlan 112
+ check region-configuration
+ quit
+
+display cu | begin stp
+```
+
+```shell
+# Verify Configuration
+
+display stp vlan 111
+display stp vlan 112
+
+немесе
+
+display stp instance 1 brief
+display stp instance 2 brief
 ```
 
 ## Step 4 - VRRP (Virtual Router Redundancy Protocol)
