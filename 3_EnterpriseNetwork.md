@@ -550,6 +550,18 @@ H1> ping google.com
 [EdgeR1] display nat session all verbose
 ```
 
+## Step 7 – Configure DHCP Server
+
+**Configure DHCP Server on Linux**
+
+Link: [Configure DHCP Server on Linux](4_DHCP.md)  
+
+**Configure DHCP Server on Huawei VRP**
+
+```shell
+dhcp enable
+```
+
 ## Configure D3 Switch using Cisco IOS
 
 ```shell
