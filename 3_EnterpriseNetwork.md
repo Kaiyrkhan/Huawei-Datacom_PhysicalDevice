@@ -259,7 +259,7 @@ display stp instance 1 brief
 display stp instance 2 brief
 ```
 
-## Step 4 - VRRP (Virtual Router Redundancy Protocol)
+## Step 4 – VRRP (Virtual Router Redundancy Protocol)
 
 **D1 and D2 Switch**
 
@@ -284,7 +284,7 @@ interface Vlanif112
 display vrrp brief
 ```
 
-## Step 4 - Single-Area OSPF
+## Step 5 – Single-Area OSPF
 
 **D1 Switch**
 
@@ -328,7 +328,7 @@ ospf 1 router-id 50.1.1.1
   network 10.1.1.100 0.0.0.3
 ```
 
-## Step 5 - NAT (Easy IP)
+## Step 6 – Network Address Translation (Easy IP)
 
 **EdgeR1 Router**
 
@@ -346,7 +346,7 @@ interface GigabitEthernet0/0/2
 ip route-static 0.0.0.0 0.0.0.0 172.21.0.1
 ```
 
-**D3 Switch - Cisco IOS**
+## Configure D3 Switch (Cisco IOS)
 
 ```shell
 # Create VLANs
