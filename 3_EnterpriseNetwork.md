@@ -231,6 +231,8 @@ display eth-trunk 1
 
 ## Step 3 - VRRP (Virtual Router Redundancy Protocol)
 
+**D1 and D2 Switch**
+
 ```shell
 interface Vlanif111
  ip address 172.16.111.1 255.255.255.0
