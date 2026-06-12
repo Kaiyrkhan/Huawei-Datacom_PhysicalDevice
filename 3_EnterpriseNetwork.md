@@ -308,26 +308,73 @@ display vrrp brief
 **D1 Switch**
 
 ```shell
+# Configure Routed Interface
+
+interface g0/0/1
+ undo portswitch
+ ip address 10.1.1.106 30
+ quit
+
+display ip int brief
+```
+
+```shell
 ospf 1 router-id 50.7.7.7
  area 0.0.0.0
   network 10.1.1.104 0.0.0.3
-  network 10.1.50.0 0.0.0.255
   network 172.16.111.0 0.0.0.255
   network 172.16.112.0 0.0.0.255
+  quit
+ quit
+
+display cu | begin ospf
 ```
 
 **D2 Switch**
 
 ```shell
+# Configure Routed Interface
+
+interface g0/0/1
+ undo portswitch
+ ip address 10.1.1.110 30
+ quit
+
+display ip int brief
+```
+
+```shell
 ospf 1 router-id 50.8.8.8
  area 0.0.0.0
   network 10.1.1.108 0.0.0.3
-  network 10.1.50.0 0.0.0.255
   network 172.16.111.0 0.0.0.255
   network 172.16.112.0 0.0.0.255
 ```
 
 **C1 Switch**
+
+```shell
+# Configure Routed Interface
+
+interface g0/0/1
+ undo portswitch
+ ip address 10.1.1.102 30
+ quit
+interface g0/0/2
+ undo portswitch
+ ip address 10.1.1.105 30
+ quit
+interface g0/0/3
+ undo portswitch
+ ip address 10.1.1.109 30
+ quit
+interface g0/0/4
+ undo portswitch
+ ip address 10.1.1.113 30
+ quit
+
+display ip int brief
+```
 
 ```shell
 ospf 1 router-id 50.3.3.3
@@ -336,15 +383,43 @@ ospf 1 router-id 50.3.3.3
   network 10.1.1.104 0.0.0.3
   network 10.1.1.108 0.0.0.3
   network 10.1.1.112 0.0.0.3
+  quit
+ quit
+
+display ospf peer brief
 ```
 
 **EdgeR1 Router**
 
 ```shell
+interface g0/0/2
+ ip address dhcp-alloc
+ quit
+interface g0/0/3
+ ip address 10.1.1.101 30
+ quit
+
+display ip int brief
+```
+
+```shell
+ping 172.21.0.1
+ Reply from ping 172.21.0.1: bytes=56 Sequence=1 ttl=64 time=1 ms
+
+немесе
+
+ping 206.62.55.193
+ Reply from ping 206.62.55.193: bytes=56 Sequence=1 ttl=64 time=1 ms
+```
+
+```shell
+display ip int brief
+
 ospf 1 router-id 50.1.1.1
- default-route-advertise
  area 0.0.0.0
   network 10.1.1.100 0.0.0.3
+  quit
+ quit
 ```
 
 ## Step 6 – Configure NAT (Easy IP)
