@@ -395,6 +395,7 @@ display ospf peer brief
 # Configure Routed Interface
 
 interface g0/0/24
+ description "Uplink to C1 GE0/0/4"
  undo portswitch
  ip address 10.1.1.114 30
  quit
@@ -404,9 +405,12 @@ interface g0/0/24
 # Configure VLANIF Interfaces
 
 interface VLANIF 10
+ description "Connected to VMs"
  ip address 10.10.10.1 24
  quit
+
 interface VLANIF 20
+ description "Connected to ESXi1 vmnic0"
  ip address 172.20.20.1 24
  quit
 
