@@ -535,6 +535,7 @@ display nat outbound
 ```
 
 ```shell
+# Verify NAT Configuration
 # Verify Internet Connectivity
 
 H1> ping 8.8.8.8
