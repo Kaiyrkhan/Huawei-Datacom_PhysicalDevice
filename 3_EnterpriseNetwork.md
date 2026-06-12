@@ -497,7 +497,7 @@ display nat outbound
 ```
 
 ```shell
-# Verify Configuration
+# Verify NAT and Internet Connectivity
 
 H1> ping 8.8.8.8
  64 bytes from 8.8.8.8: icmp_seq=1 ttl=101 time=82 ms
