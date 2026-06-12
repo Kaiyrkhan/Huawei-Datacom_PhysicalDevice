@@ -134,52 +134,7 @@ vlan 20
 display vlan
 ```
 
-**D3 Switch - Cisco IOS**
 
-```shell
-# Create VLANs
-
-vlan 10
- name VMs
- exit
-vlan 20
- name ESXi
- exit
-
-show vlan brief
-
-interface Vlan10
- ip address 10.10.10.1 255.255.255.0
-
-interface Vlan20
- ip address 172.20.20.1 255.255.255.0
-```
-
-```shell
-# Configure Trunk Port and Allowed VLANs
-
-interface GigabitEthernet0/2
- description "Connected to SRV-01 NIC1"
- switchport mode trunk
- switchport trunk encapsulation dot1q
- switchport trunk allowed vlan 10,20
- exit
-
-show vlan brief
-show int status
-show
-```
-
-```shell
-interface GigabitEthernet0/1
- description "Uplink to C1 GE0/0/4"
- no switchport
- exit
-
- ip address 10.1.1.114 255.255.255.252
- no shutdown
- exit
-```
 
 **EdgeR1 Router**
 
@@ -317,4 +272,51 @@ interface GigabitEthernet0/0/2
  ip address dhcp-alloc
 
 ip route-static 0.0.0.0 0.0.0.0 172.21.0.1
+```
+
+**D3 Switch - Cisco IOS**
+
+```shell
+# Create VLANs
+
+vlan 10
+ name VMs
+ exit
+vlan 20
+ name ESXi
+ exit
+
+show vlan brief
+
+interface Vlan10
+ ip address 10.10.10.1 255.255.255.0
+
+interface Vlan20
+ ip address 172.20.20.1 255.255.255.0
+```
+
+```shell
+# Configure Trunk Port and Allowed VLANs
+
+interface GigabitEthernet0/2
+ description "Connected to SRV-01 NIC1"
+ switchport mode trunk
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,20
+ exit
+
+show vlan brief
+show int status
+show
+```
+
+```shell
+interface GigabitEthernet0/1
+ description "Uplink to C1 GE0/0/4"
+ no switchport
+ exit
+
+ ip address 10.1.1.114 255.255.255.252
+ no shutdown
+ exit
 ```
