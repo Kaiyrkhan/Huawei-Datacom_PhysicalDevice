@@ -339,8 +339,6 @@ interface g0/0/1
  undo portswitch
  ip address 10.1.1.110 30
  quit
-
-display ip int brief
 ```
 
 ```shell
@@ -349,6 +347,8 @@ ospf 1 router-id 50.8.8.8
   network 10.1.1.108 0.0.0.3
   network 172.16.111.0 0.0.0.255
   network 172.16.112.0 0.0.0.255
+  quit
+ quit
 ```
 
 **C1 Switch**
@@ -387,6 +387,40 @@ ospf 1 router-id 50.3.3.3
  quit
 
 display ospf peer brief
+```
+
+**D3 Switch**
+
+```shell
+# Configure Routed Interface
+
+interface g0/0/24
+ undo portswitch
+ ip address 10.1.1.114 30
+ quit
+```
+
+```shell
+# Configure VLANIF Interfaces
+
+interface VLANIF 10
+ ip address 10.10.10.1 24
+ quit
+interface VLANIF 20
+ ip address 172.20.20.1 24
+ quit
+
+display ip int brief
+```
+
+```shell
+ospf 1 router-id 50.5.5.5
+ area 0.0.0.0
+  network 10.1.1.112 0.0.0.3
+  network 10.10.10.0 0.0.0.255
+  network 172.20.20.0 0.0.0.255
+  quit
+ quit
 ```
 
 **EdgeR1 Router**
