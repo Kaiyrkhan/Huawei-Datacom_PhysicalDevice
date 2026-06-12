@@ -89,6 +89,13 @@ display port vlan
 
 vlan batch 111 112
 
+vlan 111
+ name Service
+ quit
+vlan 112
+ name Service
+ quit
+
 display vlan
 ```
 
@@ -109,39 +116,69 @@ display vlan
 display port vlan
 ```
 
-**D3 Switch**
+**D3 Switch - Huawei VRP**
 
 ```shell
 # Create VLANs
 
-vlan batch
+vlan batch 10 20
  quit
+
+vlan 10
+ name VMs
+ quit
+vlan 20
+ name ESXi
+ quit
+
+display vlan
+```
+
+**D3 Switch - Cisco IOS**
+
+```shell
+# Create VLANs
+
+vlan 10
+ name VMs
+ exit
+vlan 20
+ name ESXi
+ exit
+
+show vlan brief
 
 interface Vlan10
  ip address 10.10.10.1 255.255.255.0
 
 interface Vlan20
  ip address 172.20.20.1 255.255.255.0
-
-show vlan
 ```
 
 ```shell
-# Configure Trunk Port
+# Configure Trunk Port and Allowed VLANs
 
 interface GigabitEthernet0/2
+ description "Connected to SRV-01 NIC1"
+ switchport mode trunk
  switchport trunk encapsulation dot1q
  switchport trunk allowed vlan 10,20
- switchport mode trunk
+ exit
 
-show vlan
-show port vlan
+show vlan brief
+show int status
+show
 ```
 
 ```shell
 interface GigabitEthernet0/1
+ description "Uplink to C1 GE0/0/4"
  no switchport
+ exit
+
  ip address 10.1.1.114 255.255.255.252
+ no shutdown
+ exit
 ```
 
 **EdgeR1 Router**
