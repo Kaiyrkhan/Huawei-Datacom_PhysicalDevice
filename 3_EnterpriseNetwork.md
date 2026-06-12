@@ -179,11 +179,43 @@ display eth-trunk 1
 ## Step 3 – Configure MSTP (Multiple Spanning Tree Protocol)
 
 ```shell
+display stp
+
+stp enable
+ Warning: The global STP state will be changed. Continue? [Y/N]: Y
+
+stp mode mstp
+
+display stp
+```
+
+```shell
 stp region-configuration
  region-name HQ
  revision-level 1
  instance 1 vlan 111
  instance 2 vlan 112
+ active region-configuration
+ check region-configuration
+ quit
+```
+
+```shell
+display cu | begin stp
+```
+
+```shell
+# D1 Switch
+
+stp instance 1 root primary
+stp instance 2 root secondary
+```
+
+```shell
+# D2 Switch
+
+stp instance 1 root secondary
+stp instance 2 root primary
 ```
 
 ## Step 4 - VRRP (Virtual Router Redundancy Protocol)
