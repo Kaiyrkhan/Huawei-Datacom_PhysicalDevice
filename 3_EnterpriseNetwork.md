@@ -16,13 +16,13 @@
 
 ## Scenario
 
-1) Configure VLAN (Create VLANs and Access/Trunk Ports)  
-   Link Aggregation. Eth-Trunk  
-   MSTP (Multiple Spanning Tree Protocol)  
-2) VRRP (Virtual Router Redundancy Protocol)
-3) Single-Area OSPF
-4) DHCP
-5) NAT (Easy IP)
+1) Configure VLAN (Create VLANs and Access/Trunk Ports)
+2) Link Aggregation. Eth-Trunk
+3) MSTP (Multiple Spanning Tree Protocol)  
+4) VRRP (Virtual Router Redundancy Protocol)
+5) Single-Area OSPF
+6) NAT (Easy IP)
+7) DHCP
 
 ## Step 1 – Configure VLAN (Create VLANs and Access/Trunk Ports)
 
@@ -261,26 +261,45 @@ display stp instance 2 brief
 
 ## Step 4 – Configure VRRP (Virtual Router Redundancy Protocol)
 
-**D1 and D2 Switch**
+**D1 Switch**
 
 ```shell
-interface Vlanif111
- ip address 172.16.111.1 255.255.255.0
+interface vlanif 111
+ ip address 172.16.111.1 24
  vrrp vrid 1 virtual-ip 172.16.111.254
- vrrp vrid 1 priority 110
- dhcp select relay
- dhcp relay server-ip 10.10.10.67
+ vrrp vrid 1 priority 105
+ vrrp vrid 1 authentication-mode md5 Key@123 | Datacom@123
+ quit
 
-interface Vlanif112
- ip address 172.16.112.1 255.255.255.0
+interface vlanif 112
+ ip address 172.16.112.1 24
  vrrp vrid 2 virtual-ip 172.16.112.254
- dhcp select relay
- dhcp relay server-ip 10.10.10.67
+ vrrp vrid 2 authentication-mode md5 Key@123 | Datacom@123
+ quit
+
+display ip int brief
+display vrrp
+display vrrp brief
 ```
 
-```shell
-# Verify Configuration
+**D2 Switch**
 
+```shell
+interface vlanif 111
+ ip address 172.16.111.2 24
+ vrrp vrid 1 virtual-ip 172.16.111.254
+ vrrp vrid 1 authentication-mode md5 Key@123 | Datacom@123
+ quit
+
+interface vlanif 112
+ ip address 172.16.112.2 24
+ vrrp vrid 2 virtual-ip 172.16.112.254
+ vrrp vrid 2 priority 105
+ vrrp vrid 2 authentication-mode md5 Key@123 | Datacom@123
+ quit
+
+display ip int brief
+display vrrp
 display vrrp brief
 ```
 
