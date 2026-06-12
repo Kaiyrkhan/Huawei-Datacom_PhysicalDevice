@@ -314,9 +314,9 @@ show
 interface GigabitEthernet0/1
  description "Uplink to C1 GE0/0/4"
  no switchport
- exit
-
  ip address 10.1.1.114 255.255.255.252
  no shutdown
  exit
+
+show ip int brief
 ```
