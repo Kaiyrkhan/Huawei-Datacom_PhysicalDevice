@@ -413,6 +413,11 @@ ping 206.62.55.193
 ```
 
 ```shell
+ping 8.8.8.8
+ Reply from ping 8.8.8.8: bytes=56 Sequence=1 ttl=64 time=75 ms
+```
+
+```shell
 display ip int brief
 
 ospf 1 router-id 50.1.1.1
@@ -427,17 +432,83 @@ ospf 1 router-id 50.1.1.1
 **EdgeR1 Router**
 
 ```shell
+ping 172.21.0.1
+ Reply from ping 172.21.0.1: bytes=56 Sequence=1 ttl=64 time=1 ms
+немесе
+ping 206.62.55.193
+ Reply from ping 206.62.55.193: bytes=56 Sequence=1 ttl=64 time=1 ms
+```
+
+```shell
+ping 8.8.8.8
+ Reply from ping 8.8.8.8: bytes=56 Sequence=1 ttl=64 time=75 ms
+```
+
+```shell
+# Default Static Route
+
+ip route-static 0.0.0.0 0.0.0.0 172.21.0.1
+немесе
+ip route-static 0.0.0.0 0.0.0.0 206.62.55.193
+
+display cu | include static
+```
+
+```shell
+# Advertise the Default Route
+
+ospf 1
+ default-route-advertise
+ quit
+```
+
+```shell
+[EdgeR1] display ip routing-table
+
+Destination/Mask   Proto   Pre   Cost   Flags   NextHop         Interface
+       0.0.0.0/0   Static  60    0      RD      206.62.55.193   GigabitEthernet 0/0/2
+```
+
+```shell
+[C1] display ip routing-table
+
+Destination/Mask   Proto   Pre   Cost   Flags   NextHop         Interface
+       0.0.0.0/0   O_ASE   150   1      D       10.1.1.101      GigabitEthernet 1/0/1
+```
+
+```shell
+# NAT (Easy IP)
+
 acl number 2000
- rule 5 permit source 172.16.111.0 0.0.0.255
- rule 10 permit source 172.16.112.0 0.0.0.255
- rule 15 permit source 172.20.20.0 0.0.0.255
- rule 20 permit source 10.10.10.0 0.0.0.255
+acl 2000
+ rule permit source 172.16.111.0 0.0.0.255
+ rule permit source 172.16.112.0 0.0.0.255
+ rule permit source 10.10.10.0 0.0.0.255
+ quit
 
 interface GigabitEthernet0/0/2
  nat outbound 2000
- ip address dhcp-alloc
+ quit
+```
 
-ip route-static 0.0.0.0 0.0.0.0 172.21.0.1
+```shell
+display cu section acl
+display nat outbound
+```
+
+```shell
+# Verify Configuration
+
+H1> ping 8.8.8.8
+ 64 bytes from 8.8.8.8: icmp_seq=1 ttl=101 time=82 ms
+
+H1> ping google.com
+```
+
+```shell
+# View NAT Sessions
+
+[EdgeR1] display nat session all verbose
 ```
 
 ## Configure D3 Switch using Cisco IOS
