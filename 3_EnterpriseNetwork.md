@@ -23,7 +23,6 @@
 3) Single-Area OSPF
 4) DHCP
 5) NAT (Easy IP)
-6) Remote Access (SSH, Telnet)
 
 ## Step 1 – Configure VLAN (Create VLANs and Access/Trunk Ports)
 
