@@ -36,9 +36,6 @@ vlan batch 50 111 112
 vlan 50
  name MGMT
 
-interface Vlanif50
- ip address 10.1.50.101 255.255.255.0
-
 display vlan
 ```
 
@@ -84,34 +81,51 @@ stp region-configuration
  instance 2 vlan 112
 ```
 
-**D1 and D2 Switch**
+**D1 Switch**
 
 ```shell
 # Create VLANs
 vlan batch 111 112
 
-interface Vlanif111
- ip address 172.16.111.1 255.255.255.0
- vrrp vrid 1 virtual-ip 172.16.111.254
- vrrp vrid 1 priority 110
- dhcp select relay
- dhcp relay server-ip 10.10.10.67
+display vlan
+```
 
-interface Vlanif112
- ip address 172.16.112.1 255.255.255.0
- vrrp vrid 2 virtual-ip 172.16.112.254
- dhcp select relay
- dhcp relay server-ip 10.10.10.67
+```shell
+interface MEth0/0/1
+ ip address 10.1.50.21 255.255.255.0
+```
+
+```shell
+# Configure Trunk Port and Allowed VLANs
+
+interface g0/0/2
+ port link-type trunk
+ port trunk allow-pass vlan 111 112
+ quit
+
+display vlan
+display port vlan
+```
+
+```shell
+stp region-configuration
+ region-name HQ
+ revision-level 1
+ instance 1 vlan 111
+ instance 2 vlan 112
+ active region-configuration
+```
+
+**D2 Switch**
+
+```shell
+# Create VLANs
+vlan batch 111 112
 
 display vlan
 ```
 
 ```shell
-(D1) 
-interface MEth0/0/1
- ip address 10.1.50.21 255.255.255.0
-
-(D2)
 interface MEth0/0/1
  ip address 10.1.50.22 255.255.255.0
 ```
@@ -119,13 +133,6 @@ interface MEth0/0/1
 ```shell
 # Configure Trunk Port and Allowed VLANs
 
-(D1)
-interface g0/0/2
- port link-type trunk
- port trunk allow-pass vlan 111 112
- quit
-
-(D2)
 interface g0/0/3
  port link-type trunk
  port trunk allow-pass vlan 111 112
@@ -181,6 +188,16 @@ interface GigabitEthernet0/1
  ip address 10.1.1.114 255.255.255.252
 ```
 
+**EdgeR1 Router**
+
+```shell
+# Configure Access Port
+
+interface GigabitEthernet0/0/8
+ port link-type access
+ port default vlan 50
+```
+
 ## Step 2 – Configure Link Aggregation. Eth-Trunk
 
 **D1 and D2 Switch**
@@ -211,27 +228,88 @@ display int brief
 
 display eth-trunk 1
 ```
+
+## Step 3 - VRRP (Virtual Router Redundancy Protocol)
+
+```shell
+interface Vlanif111
+ ip address 172.16.111.1 255.255.255.0
+ vrrp vrid 1 virtual-ip 172.16.111.254
+ vrrp vrid 1 priority 110
+ dhcp select relay
+ dhcp relay server-ip 10.10.10.67
+
+interface Vlanif112
+ ip address 172.16.112.1 255.255.255.0
+ vrrp vrid 2 virtual-ip 172.16.112.254
+ dhcp select relay
+ dhcp relay server-ip 10.10.10.67
+```
+
+```shell
+# Verify Configuration
+
+display vrrp brief
+```
+
+## Step 4 - Single-Area OSPF
+
+**D1 Switch**
+
+```shell
+ospf 1 router-id 50.7.7.7
+ area 0.0.0.0
+  network 10.1.1.104 0.0.0.3
+  network 10.1.50.0 0.0.0.255
+  network 172.16.111.0 0.0.0.255
+  network 172.16.112.0 0.0.0.255
+```
+
+**D2 Switch**
+
+```shell
+ospf 1 router-id 50.8.8.8
+ area 0.0.0.0
+  network 10.1.1.108 0.0.0.3
+  network 10.1.50.0 0.0.0.255
+  network 172.16.111.0 0.0.0.255
+  network 172.16.112.0 0.0.0.255
+```
+
 **C1 Switch**
 
 ```shell
-interface MEth0/0/1
- ip address 10.1.50.11 255.255.255.0
+ospf 1 router-id 50.3.3.3
+ area 0.0.0.0
+  network 10.1.1.100 0.0.0.3
+  network 10.1.1.104 0.0.0.3
+  network 10.1.1.108 0.0.0.3
+  network 10.1.1.112 0.0.0.3
 ```
 
 **EdgeR1 Router**
 
 ```shell
-vlan 50
- name MGMT
-
-interface Vlanif50
- ip address 10.1.50.1 255.255.255.0
+ospf 1 router-id 50.1.1.1
+ default-route-advertise
+ area 0.0.0.0
+  network 10.1.1.100 0.0.0.3
 ```
 
-```shell
-# Configure Access Port
+## Step 5 - NAT (Easy IP)
 
-interface GigabitEthernet0/0/8
- port link-type access
- port default vlan 50
+**EdgeR1 Router**
+
+```shell
+acl number 2000
+ rule 5 permit source 172.16.111.0 0.0.0.255
+ rule 10 permit source 172.16.112.0 0.0.0.255
+ rule 15 permit source 172.20.20.0 0.0.0.255
+ rule 20 permit source 10.10.10.0 0.0.0.255
+
+interface GigabitEthernet0/0/2
+ nat outbound 2000
+ ip address dhcp-alloc
+
+ip route-static 0.0.0.0 0.0.0.0 172.21.0.1
 ```
