@@ -30,10 +30,18 @@
 
 ```shell
 # Create VLANs
+
 vlan batch 50 111 112
 
 vlan 50
  name MGMT
+ quit
+vlan 111
+ name Service
+ quit
+vlan 112
+ name Service
+ quit
 
 display vlan
 ```
@@ -45,6 +53,8 @@ interface g1/0/5
  port link-type access
  port default vlan 111
  quit
+
+...
 
 interface g1/0/9
  port link-type access
@@ -72,26 +82,14 @@ display vlan
 display port vlan
 ```
 
-```shell
-stp region-configuration
- region-name HQ
- revision-level 1
- instance 1 vlan 111
- instance 2 vlan 112
-```
-
-**D1 Switch**
+**D1 and D2 Switch**
 
 ```shell
 # Create VLANs
+
 vlan batch 111 112
 
 display vlan
-```
-
-```shell
-interface MEth0/0/1
- ip address 10.1.50.21 255.255.255.0
 ```
 
 ```shell
@@ -102,36 +100,6 @@ interface g0/0/2
  port trunk allow-pass vlan 111 112
  quit
 
-display vlan
-display port vlan
-```
-
-```shell
-stp region-configuration
- region-name HQ
- revision-level 1
- instance 1 vlan 111
- instance 2 vlan 112
- active region-configuration
-```
-
-**D2 Switch**
-
-```shell
-# Create VLANs
-vlan batch 111 112
-
-display vlan
-```
-
-```shell
-interface MEth0/0/1
- ip address 10.1.50.22 255.255.255.0
-```
-
-```shell
-# Configure Trunk Port and Allowed VLANs
-
 interface g0/0/3
  port link-type trunk
  port trunk allow-pass vlan 111 112
@@ -141,23 +109,12 @@ display vlan
 display port vlan
 ```
 
-```shell
-stp region-configuration
- region-name HQ
- revision-level 1
- instance 1 vlan 111
- instance 2 vlan 112
- active region-configuration
-```
-
 **D3 Switch**
 
 ```shell
 # Create VLANs
-vlan 10
- quit
 
-vlan 20
+vlan batch
  quit
 
 interface Vlan10
@@ -228,7 +185,17 @@ display int brief
 display eth-trunk 1
 ```
 
-## Step 3 - VRRP (Virtual Router Redundancy Protocol)
+## Step 3 – Configure MSTP (Multiple Spanning Tree Protocol)
+
+```shell
+stp region-configuration
+ region-name HQ
+ revision-level 1
+ instance 1 vlan 111
+ instance 2 vlan 112
+```
+
+## Step 4 - VRRP (Virtual Router Redundancy Protocol)
 
 **D1 and D2 Switch**
 
