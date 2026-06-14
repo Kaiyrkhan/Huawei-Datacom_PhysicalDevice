@@ -16,7 +16,7 @@
   2) Configure DHCP Server
   3) Configure DHCP Relay Agent
   4) Configure DHCP Logging
-  5) Verify IP Address Assignment
+  5) Verify DHCP Address Assignment
 
 #### Step 1 - install DHCP Package
 
