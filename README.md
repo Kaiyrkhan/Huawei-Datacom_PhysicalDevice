@@ -1,4 +1,4 @@
-# HCIA-Datacom (Physical Device)
+# Lab Guide using Physical Devices
 
 ### Course Contents
 1) Huawei VRP Basics
