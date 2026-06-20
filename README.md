@@ -56,8 +56,8 @@ IPv6 Addressing and OSPFv3, DHCPv6, SLAAC
 
 Monitoring Systems (LibreNMS, Icinga, Zabbix)  
 
-Centralized Logging System (syslog-ng/rsyslog + Graylog)  
-Router/Switch (Log) → syslog-ng (жинау) → Graylog+MongoDB (талдау) → OpenSearch 2.15.x (сақтау)  
+Centralized Logging System (syslog-ng and rsyslog + Graylog)  
+Router/Switch (Log) ➜ syslog-ng (жинау) ➜ Graylog+MongoDB (талдау) ➜ OpenSearch 2.15.x (сақтау)  
 
 Centralized Authentication and Authorization (LDAP)  
 
