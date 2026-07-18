@@ -5,14 +5,14 @@
 ### Network Topology
 ![Topology Enterprise Network Design](./images/Topology_EnterpriseNetworkDesign_PhysicalDevice_Huawei_v1.png)  
 
-| Device         | Layer                     |
-|----------------|---------------------------|
-| ISP            | Internet Service Provider |
-| EdgeR1         | Egress Layer              |
-| С1             | Core Layer                |
-| D1, D2, D3     | Aggregation Layer         |
-| A1, A2         | Access Layer              |
-| H1, H2, H3, H4 | Terminal Layer            |
+| Device                          | Layer             |
+|---------------------------------|-------------------|
+| ISP (Internet Service Provider) |                   |
+| EdgeR1                          | Egress Layer      |
+| С1                              | Core Layer        |
+| D1, D2, D3                      | Aggregation Layer |
+| A1, A2                          | Access Layer      |
+| H1, H2, H3, H4                  | Terminal Layer    |
 
 ## Scenario
 
